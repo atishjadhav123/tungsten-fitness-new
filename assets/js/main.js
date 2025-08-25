@@ -329,6 +329,7 @@ window.saveForm = async function (event) {
   const db = getFirestore(app);
 
   const formData = {
+    page_name: form.page_name.value,
     name: form.name.value,
     email: form.email.value,
     whatsapp: form.whatsapp.value,
