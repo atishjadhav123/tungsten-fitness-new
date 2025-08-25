@@ -204,28 +204,6 @@ function showSuccessMessage(event) {
 }
 
 
-
-/**contact form */
-// function showSuccessMessage(e) {
-//   e.preventDefault();
-//   const form = e.target;
-//   const formData = new FormData(form);
-
-//   fetch(form.action, {
-//     method: "POST",
-//     body: formData
-//   }).then(response => {
-//     if (response.ok) {
-//       form.reset();
-//       document.getElementById("successMessage").classList.remove("d-none");
-//     }
-//   });
-
-//   return false;
-// }
-
-
-
 function showSuccessMessage(event) {
   event.preventDefault();
 
@@ -253,24 +231,6 @@ function showSuccessMessage(event) {
 
 
 
-// testemonial
-// function scrollCarousel(direction) {
-//   const carousel = document.getElementById("videoCarousel");
-//   const scrollAmount = carousel.offsetWidth * 0.8;
-//   carousel.scrollBy({ left: direction * scrollAmount, behavior: "smooth" });
-// }
-
-// function openVideoModal(videoUrl) {
-//   const modalVideo = document.getElementById("modalVideo");
-//   const source = modalVideo.querySelector("source");
-//   source.src = videoUrl;
-//   modalVideo.load();
-//   const modal = new bootstrap.Modal(document.getElementById("videoModal"));
-//   modal.show();
-// }
-
-
-// Initialize carousel slide counter
 document.addEventListener('DOMContentLoaded', function () {
   const slides = document.querySelectorAll('.video-carousel .card');
   document.getElementById('totalSlides').textContent = slides.length;
@@ -345,6 +305,68 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initial call
   updateVisibleIndex();
 });
+
+
+// firebase config
+window.saveForm = async function (event) {
+  event.preventDefault();
+
+  const form = event.target;
+
+  const { initializeApp } = await import("https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js");
+  const { getFirestore, collection, addDoc } = await import("https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js");
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAG5VgFrw7dpTVCu0OtE00HQht2HN9O2rE",
+    authDomain: "tungsten-user-management.firebaseapp.com",
+    projectId: "tungsten-user-management",
+    storageBucket: "tungsten-user-management.firebasestorage.app",
+    messagingSenderId: "81220252865",
+    appId: "1:81220252865:web:693895e1d91306f1ba5040",
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  const formData = {
+    name: form.name.value,
+    email: form.email.value,
+    whatsapp: form.whatsapp.value,
+    message: form.message.value,
+    whatsappConsent: form.whatsapp_consent.checked,
+    createdAt: new Date()
+  };
+
+  try {
+    await addDoc(collection(db, "contacts"), formData);
+
+    const web3Response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: (() => {
+        const fd = new FormData(form);
+        fd.append("access_key", "7287b7ba-cfb9-4332-8d51-5754b68a67c2");
+        return fd;
+      })()
+    });
+
+    if (web3Response.ok) {
+      document.getElementById("successMessage").classList.remove("d-none");
+      form.reset();
+      setTimeout(() => {
+        document.getElementById("successMessage").classList.add("d-none");
+        const modal = bootstrap.Modal.getInstance(document.getElementById('contactModal'));
+        modal.hide();
+      }, 3000);
+    } else {
+      alert("Email send failed.");
+    }
+
+  } catch (error) {
+    console.error("Error:", error);
+    alert("Something went wrong.");
+  }
+}
+
 
 
 
