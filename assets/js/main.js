@@ -368,6 +368,26 @@ window.saveForm = async function (event) {
   }
 }
 
+// lazy-load-video
+document.addEventListener("DOMContentLoaded", function () {
+  const videos = document.querySelectorAll("video.lazy-video");
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const video = entry.target;
+        const source = video.querySelector("source");
+        source.src = source.dataset.src;  // Load actual video
+        video.load();
+        video.play(); // Autoplay when visible
+        obs.unobserve(video);
+      }
+    });
+  }, { threshold: 0.25 }); // 25% visible
+
+  videos.forEach(video => observer.observe(video));
+});
+
 
 
 

@@ -378,12 +378,15 @@
           </div>
           <div class="row align-items-center g-4">
             <div class="col-12 col-lg-6 text-center" data-aos="slide-right">
-              <div class="position-relative  w-100" style="height: 300px;">
-                <video class="position-absolute top-0 start-0 w-100 h-100  shadow" autoplay muted loop playsinline>
-                  <source src="assets/video-2/Services 1.mp4" type="video/mp4" />
+              <div class="position-relative w-100" style="height: 300px;">
+                <video class="lazy-video position-absolute top-0 start-0 w-100 h-100 shadow" autoplay muted loop
+                  playsinline preload="none" poster="assets/video-2/thumbnail.jpg" <!-- optional thumbnail -->
+                  >
+                  <source data-src="assets/video-2/Services 1.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
+
               <!-- 
               <div class="position-relative w-100" style="height: 300px; overflow: hidden; border-radius: 30px;">
                 <video class="position-absolute top-0 start-0 w-100 h-100 object-cover" autoplay muted loop playsinline>
@@ -426,12 +429,15 @@
             <!-- Video First on Mobile -->
             <div class="col-12 col-lg-6 order-1 order-lg-2 text-center" data-aos="slide-right">
               <div class="position-relative w-100" style="height: 300px;">
-                <video class="position-absolute top-0 start-0 w-100 h-100 rounded-4 shadow object-cover" autoplay muted
-                  loop playsinline>
-                  <source src="assets/video-2/Services 2.mp4" type="video/mp4" />
+                <video class="lazy-video position-absolute top-0 start-0 w-100 h-100 rounded-4 shadow object-cover"
+                  autoplay muted loop playsinline preload="none" poster="assets/video-2/thumbnail.jpg" <!-- optional
+                  thumbnail -->
+                  >
+                  <source data-src="assets/video-2/Services 2.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
+
             </div>
 
             <!-- Text Second on Mobile -->
@@ -470,12 +476,14 @@
           <div class="row align-items-center g-4">
             <div class="col-12 col-lg-6 text-center" data-aos="slide-right">
               <div class="position-relative w-100" style="height: 300px;">
-                <video class="position-absolute top-0 start-0 w-100 h-100 rounded-4 shadow object-cover" autoplay muted
-                  loop playsinline>
-                  <source src="assets/video-2/Services 3.mp4" type="video/mp4" />
+                <video class="lazy-video position-absolute top-0 start-0 w-100 h-100 rounded-4 shadow object-cover"
+                  autoplay muted loop playsinline preload="none" poster="assets/video-2/thumbnail-3.jpg" optional
+                  thumbnail>
+                  <source data-src="assets/video-2/Services 3.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
+
             </div>
             <div class="col-12 col-lg-6 mx-auto" data-aos="slide-left"> <!-- Added mx-auto for horizontal centering -->
               <h3 class="fw-bold agora-class text-center">GYM FACILITIES</h3> <!-- Added text-center -->
@@ -915,8 +923,10 @@
               <!-- Mobile video cards -->
               <div class="card video-card"
                 onclick="openVideoModal('assets/videos-2/Tungsten Fitness testimonial by Aditya Devgadh.mp4')">
-                <video autoplay muted loop playsinline controls>
-                  <source src="assets/video-2/Tungsten Fitness testimonial by Aditya Devgadh.mp4" type="video/mp4" />
+                <video class="lazy-video" autoplay muted loop playsinline controls preload="none"
+                  poster="assets/thumbnails/aditya.jpg">
+                  <source data-src="assets/video-2/Tungsten Fitness testimonial by Aditya Devgadh.mp4"
+                    type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
                 <div class="play-icon">
@@ -932,8 +942,8 @@
               </div>
 
               <div class="card video-card" onclick="openVideoModal('assets/video-2/TFCN FEEDBACK JUNE.mp4')">
-                <video muted loop playsinline>
-                  <source src="assets/video-2/TFCN FEEDBACK JUNE.mp4" type="video/mp4" />
+                <video class="lazy-video" muted loop playsinline preload="none" poster="assets/thumbnails/tfcn.jpg">
+                  <source data-src="assets/video-2/TFCN FEEDBACK JUNE.mp4" type="video/mp4" />
                 </video>
                 <div class="play-icon">
                   <i class="fas fa-play"></i>
@@ -949,8 +959,9 @@
 
               <div class="card video-card"
                 onclick="openVideoModal('assets/video-2/Tungsten Fitness Testimonial by Ananya.mp4')">
-                <video muted loop playsinline>
-                  <source src="assets/video-2/Tungsten Fitness Testimonial by Ananya.mp4" type="video/mp4" />
+                <video class="lazy-video" muted loop playsinline preload="none" poster="assets/thumbnails/ananya.jpg">
+                  <source data-src="assets/video-2/Tungsten Fitness Testimonial by Ananya.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
                 </video>
                 <div class="play-icon">
                   <i class="fas fa-play"></i>
@@ -964,8 +975,9 @@
               </div>
 
               <div class="card video-card" onclick="openVideoModal('assets/video-2/TFCG TESTIMONIAL JUNE.mp4')">
-                <video muted loop playsinline>
-                  <source src="assets/video-2/TFCG TESTIMONIAL JUNE.mp4" type="video/mp4" />
+                <video class="lazy-video" muted loop playsinline preload="none" poster="assets/thumbnails/tfcg.jpg">
+                  <source data-src="assets/video-2/TFCG TESTIMONIAL JUNE.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
                 </video>
                 <div class="play-icon">
                   <i class="fas fa-play"></i>
@@ -1325,7 +1337,9 @@
       class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
-  <div id="preloader"></div>
+  <div id="preloader">
+    <img src="assets/img/Tungstun_Fitness_Club_Logo-bg.png" alt="Loading..." class="preloader-logo">
+  </div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
