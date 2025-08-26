@@ -1128,6 +1128,29 @@ section,
   font-size: 1.125rem;
 }
 
+
+
+
+.font-colorr {
+  color: #ffffff;
+  /* Base white */
+  font-size: 1.125rem;
+  text-shadow: 0 0 6px #FFD700;
+  /* Golden glow */
+}
+
+.footer-logo {
+  max-width: 200px;
+  height: auto;
+  /* keep proportion */
+  max-height: 120px;
+  /* restrict tall images */
+  object-fit: contain;
+  /* prevent distortion */
+}
+
+
+
 .about .stat-box {
   display: flex;
   flex-direction: column;
