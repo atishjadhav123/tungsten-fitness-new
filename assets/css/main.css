@@ -43,7 +43,8 @@
 :root {
   --nav-color: rgba(255, 255, 255, 0.75);
   /* The default color of the main navmenu links */
-  --nav-hover-color: #08915e;
+  /* --nav-hover-color: #08915e; */
+  --nav-hover-color: #b1cbc2;
   /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff;
   /* Used as the background color for mobile navigation menu */
@@ -9288,3 +9289,44 @@ section,
   object-fit: cover;
   /* fills box, crops evenly */
 }
+
+
+/* Force all carousel images to have the same height */
+#heroCarousel .carousel-item img {
+  height: 100vh;
+  /* Full screen height */
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Center the carousel controls vertically */
+.carousel-control-prev,
+.carousel-control-next {
+  top: 50%;
+  transform: translateY(-50%);
+  bottom: auto;
+  /* remove default bottom alignment */
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  #heroCarousel .carousel-item img {
+    height: 50vh;
+    /* Half screen height on mobile */
+  }
+}
+
+
+/* @font-face {
+  font-family: "AlergiaGroteskWide";
+  src: url("../fonts/AlergiaGroteskWide-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CynthoNext";
+  src: url("../fonts/CynthoNext-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+} */
