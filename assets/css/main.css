@@ -9316,12 +9316,19 @@ section,
   }
 }
 
-/* font */
-
+/* font franchise */
 @font-face {
   font-family: 'AlergiaGroteskWide';
   src: url("../../font/alergia-grotesk-font-family-1756418819-0/AlergiaCondensed-Medium.otf") format('woff2'),
     url('../../font/alergia-grotesk-font-family-1756418819-0/AlergiaNormal-SemiBold.otf') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: '';
+  src: url("../../font/Gothic\ CG\ No1\ Regular/") format('woff2'),
+    url('../../font/Gothic\ CG\ No1\ Regular/') format('woff');
   font-weight: 600;
   font-style: normal;
 }
@@ -9364,23 +9371,3 @@ section,
   color: #555;
   line-height: 1.4;
 }
-
-
-
-
-
-
-
-/* @font-face {
-  font-family: "AlergiaGroteskWide";
-  src: url("../fonts/AlergiaGroteskWide-SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "CynthoNext";
-  src: url("../fonts/CynthoNext-SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-} */
