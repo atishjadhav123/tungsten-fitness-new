@@ -9316,6 +9316,8 @@ section,
   }
 }
 
+/* font */
+
 @font-face {
   font-family: 'AlergiaGroteskWide';
   src: url("../../font/alergia-grotesk-font-family-1756418819-0/AlergiaCondensed-Medium.otf") format('woff2'),
