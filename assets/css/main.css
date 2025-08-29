@@ -9316,6 +9316,58 @@ section,
   }
 }
 
+@font-face {
+  font-family: 'AlergiaGroteskWide';
+  src: url("../../font/alergia-grotesk-font-family-1756418819-0/AlergiaCondensed-Medium.otf") format('woff2'),
+    url('../../font/alergia-grotesk-font-family-1756418819-0/AlergiaNormal-SemiBold.otf') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+.underline {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #eba221;
+  /* gold */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+.branch-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px 16px;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 4px 12px rgba(237, 147, 32, 0.15);
+  /* Golden soft shadow */
+  border-left: 4px solid #ed9320;
+  /* Golden accent line */
+}
+
+.branch-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(237, 147, 32, 0.25);
+}
+
+.branch-title {
+  color: #ed9320;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.branch-text {
+  color: #555;
+  line-height: 1.4;
+}
+
+
+
+
+
+
 
 /* @font-face {
   font-family: "AlergiaGroteskWide";

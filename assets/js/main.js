@@ -389,6 +389,29 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+document.querySelectorAll('#servicesDropdown').forEach(link => {
+  link.addEventListener('click', function (e) {
+    window.location.href = this.getAttribute('href');
+  });
+});
+
+
+
+const dropdowns = document.querySelectorAll('.dropdown');
+dropdowns.forEach(dropdown => {
+  dropdown.addEventListener('mouseenter', function () {
+    if (window.innerWidth > 992) { // only desktop
+      this.querySelector('.dropdown-menu').classList.add('show');
+    }
+  });
+  dropdown.addEventListener('mouseleave', function () {
+    if (window.innerWidth > 992) {
+      this.querySelector('.dropdown-menu').classList.remove('show');
+    }
+  });
+});
+
+
 
 
 
